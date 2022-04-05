@@ -40,7 +40,7 @@ public class CafeJava {
 
         System.out.println(generalGreeting + customer2);
 
-        System.out.println(displayTotalMessage + caramelPrice);
+        System.out.println(displayTotalMessage + caramelPrice * 2);
 
         if(isReadyOrder2) {
             System.out.println(readyMessage);
@@ -53,7 +53,7 @@ public class CafeJava {
 
          System.out.println(generalGreeting + customer3);
 
-         System.out.println(displayTotalMessage + espressoPrice);
+         System.out.println(displayTotalMessage + (espressoPrice - caramelPrice));
  
          if(isReadyOrder3) {
              System.out.println(readyMessage);
