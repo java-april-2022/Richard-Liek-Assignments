@@ -30,14 +30,17 @@ public class TestCafe {
         // menu.add("mocha");
         // appTest.displayMenu(menu);
     
-        System.out.println("\n----- Add Customer Test-----");
-        ArrayList<String> customers = new ArrayList<String>();
-        // --- Test 4 times ---
-        for (int i = 0; i < 4; i++) {
-            appTest.addCustomer(customers);
-            System.out.println("\n");
-        }
+        // System.out.println("\n----- Add Customer Test-----");
+        // ArrayList<String> customers = new ArrayList<String>();
+        // // --- Test 4 times ---
+        // for (int i = 0; i < 4; i++) {
+        //     appTest.addCustomer(customers);
+        //     System.out.println("\n");
+        // }
 
-        System.out.println("\n---")
-    }
+        // Ninja Bonuses
+
+        System.out.println("--- Price Chart Test---");
+        appTest.printPriceChart("Cold Brew", 3.75, 4);
+    }    
 }

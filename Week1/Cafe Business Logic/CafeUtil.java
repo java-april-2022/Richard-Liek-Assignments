@@ -6,11 +6,11 @@ public class CafeUtil {
     */
 
    public int getStreakGoal() {
-       int sum = 0;
+       int Streak = 0;
        for(int i = 1; i <=10; i++){
-           sum += i;
+           Streak += i;
        }
-       return sum;
+       return Streak;
    }
     
    /* 
@@ -30,7 +30,7 @@ public class CafeUtil {
     */
 
     public void displayMenu(ArrayList<String> menuItems){
-        String name = menuItems.get(0); // to access an element in an ArrayList using an index
+        String name = menuItems.get(0);
         for (int i = 0; i < menuItems.size(); i++)
             System.out.println(i + name);
     }
@@ -38,19 +38,24 @@ public class CafeUtil {
     // Add Customer Test!!
 
     public void addCustomer(ArrayList<String> customers) {
+        // inputing name
         System.out.println("Please enter your name:");
         String userName = System.console().readLine();
-        
-        System.out.printf("Hello, %s! \n", userName);
-
+        //prints out hello *name*!
+        System.out.printf("Hello, %s!%n", userName);
+        // prints out number of people infront of you
         System.out.printf("There are currently %s people infront of you.", customers.size());
         customers.add(userName);
     }
 
     // Ninja bonuses!
 
-    public void printPriceChart(String product, double price, int maxQuantity) {
-        System.out.println(product);
+    public void printPriceChart(String productName, double price, int maxQuantity) {
 
+        System.out.printf("%s%n", productName);
+        //prints out price, mutliplied up to max quantity (QTY * price).
+        for(int qty = 1; qty < maxQuantity; qty++) {
+            System.out.printf("%s - $%.2f%n", qty, qty * price);
+        }
     }
 }
