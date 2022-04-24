@@ -1,7 +1,8 @@
 package com.codingdojo.omijukiform.controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -14,7 +15,7 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/results")
-	private String results(Model models, 
+	private String results(HttpSession session, 
 			@RequestParam Integer number, 
 			@RequestParam String city,
 			@RequestParam String name,
@@ -22,12 +23,12 @@ public class HomeController {
 			@RequestParam String animal,
 			@RequestParam String sayNice){
 		
-		models.addAttribute("number", number);
-		models.addAttribute("city", city);
-		models.addAttribute("name", name);
-		models.addAttribute("hobby", hobby);
-		models.addAttribute("animal", animal);
-		models.addAttribute("sayNice", sayNice);
+		session.setAttribute("number", number);
+		session.setAttribute("city", city);
+		session.setAttribute("name", name);
+		session.setAttribute("hobby", hobby);
+		session.setAttribute("animal", animal);
+		session.setAttribute("sayNice", sayNice);
 		
 		return "results.jsp";
 	}

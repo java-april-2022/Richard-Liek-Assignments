@@ -14,7 +14,7 @@
     <h1 class="text-primary mb-3">Omikuji</h1>
     <div class="form-group col-4 p-4 bg-info text-dark mx-auto">
         <p>In <c:out value="${number}"/> years, you will live in <c:out value="${city}"/> with <c:out value="${name}"/>
-        as your roommate, <c:out value="${hobby}"/> for a living.<br> The next time you see a <c:out value="${animal}"/>, you will have 
+        as your roommate, Who does <c:out value="${hobby}"/> for a living.<br> The next time you see a <c:out value="${animal}"/>, you will have 
     good luck. <br> Also, <c:out value="${sayNice}"/></p>
     </div>
     <a class="btn btn-primary text-light mt-3" href="/">Go Back</a>
