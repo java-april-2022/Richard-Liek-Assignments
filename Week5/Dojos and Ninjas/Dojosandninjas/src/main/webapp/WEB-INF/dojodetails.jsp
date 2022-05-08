@@ -8,22 +8,21 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <meta charset="ISO-8859-1">
-<title>Travel Expenses</title>
+<title>Dojo Detail</title>
 </head>
-<body class="container">
-	<nav class="d-flex justify-content-between align-items-center col-12">
-		<h1 class="text-dark">Dojos and Ninjas</h1>
-		<div>
-			<a href="/" class="btn btn-primary">Home</a>
-		</div>
-	</nav>
- 
-	<form:form action="/dojo/new" method="POST" modelAttribute="newDojo">
-		<form:errors path="name"/>
-		<form:label path="name">Dojo Name/Location:</form:label>
-		<form:input path="name"/>
-		<input class="btn btn-primary" type="submit" value="Submit"/>
-	</form:form>
-
+<body>
+	<h1>Dojo Name: <c:out value="${dojo.name}"/></h1>
+	<a class="btn btn-primary" href="/">Dashboard</a>
+	<a class="btn btn-primary" href="/dojo/<c:out value="${dojo.id}"/>/edit">Edit Dojo</a>
+	<h2>Ninjas:</h2>
+	<ul>
+		<c:forEach var="ninja" items="${theseNinjas}">
+			<li>
+				<a href="/ninja/<c:out value="${ninja.id}"/>">
+					<c:out value="${ninja.firstName}"/> <c:out value="${ninja.lastName}"/>
+				</a>
+			</li>
+		</c:forEach>
+	</ul>
 </body>
 </html>

@@ -24,44 +24,73 @@ public class NinjaModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	public Long getId() { return id; }
-	public void setId(Long id) { this.id = id; }
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	
 	@NotBlank
 	private String firstName;
-	public String getFirstName() { return firstName; }
-	public void setFirstName(String firstName) { this.firstName = firstName; }
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 	
 	@NotBlank
 	private String lastName;
-	public String getLastName() { return lastName; }
-	public void setLastName(String lastName) { this.lastName = lastName; }
+	public String getLastName() {
+		return lastName; 
+	}
+	public void setLastName(String lastName) { 
+		this.lastName = lastName; 
+	}
 	
 	@Positive
 	private Integer age;
-	public Integer getAge() { return age; }
-	public void setAge(Integer age) { this.age = age; }
+	public Integer getAge() {
+		return age; 
+	}
+	public void setAge(Integer age) { 
+		this.age = age;
+	}
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "dojo_id")
-	private Dojo dojo;
-	public Dojo getDojo() { return dojo; }
-	public void setDojo(Dojo dojo) { this.dojo = dojo; }
+	private DojoModel dojo;
+	public DojoModel getDojo() { 
+		return dojo; 
+	}
+	public void setDojo(DojoModel dojo) {
+		this.dojo = dojo;
+	}
 	
 	@Column(updatable = false)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date created_at;
-	public Date getCreated_At() { return created_at; }
+	public Date getCreated_At() {
+		return created_at;
+	}
+	
 	@PrePersist
-	public void setCreated_At() { this.created_at = new Date(); }
+	public void setCreated_At() {
+		this.created_at = new Date();
+	}
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date updated_at;
-	public Date getUpdated_At() { return updated_at; }
+	public Date getUpdated_At() {
+		return updated_at;
+	}
 	@PreUpdate
-	public void setUpdated_At() { this.updated_at = new Date(); }
+	public void setUpdated_At() {
+		this.updated_at = new Date();
+	}
 	
-	public Ninja() {
+	public NinjaModel() {
 		
 	}
 }
